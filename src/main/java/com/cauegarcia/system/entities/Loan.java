@@ -1,15 +1,24 @@
 package com.cauegarcia.system.entities;
 
 import com.cauegarcia.system.entities.enums.LoanStatus;
+import jakarta.persistence.*;
 
 import java.time.Instant;
 import java.util.Objects;
 
+@Entity
+@Table(name = "loans")
 public class Loan {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Instant moment;
     private LoanStatus status;
+
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private User client;
 
     public Loan(){
     }

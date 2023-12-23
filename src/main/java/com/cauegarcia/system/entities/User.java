@@ -3,6 +3,8 @@ package com.cauegarcia.system.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -13,16 +15,21 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String phone;
     private String email;
     private LocalDate birthDate;
     private String password;
 
+    @OneToMany(mappedBy = "client")
+    private List<Loan> loans = new ArrayList<>();
+
     public User(){
     }
 
-    public User(Long id, String name, String email, LocalDate birthDate, String password) {
+    public User(Long id, String name, String phone, String email, LocalDate birthDate, String password) {
         this.id = id;
         this.name = name;
+        this.phone = phone;
         this.email = email;
         this.birthDate = birthDate;
         this.password = password;
@@ -42,6 +49,14 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getEmail() {
