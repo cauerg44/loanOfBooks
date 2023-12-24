@@ -4,7 +4,9 @@ import com.cauegarcia.system.entities.enums.LoanStatus;
 import jakarta.persistence.*;
 
 import java.time.Instant;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "loans")
@@ -20,6 +22,9 @@ public class Loan {
     @ManyToOne
     @JoinColumn(name = "client_id")
     private User client;
+
+    @OneToMany(mappedBy = "id.loan")
+    private Set<BorrowedBook> items = new HashSet<>();
 
     public Loan(){
     }

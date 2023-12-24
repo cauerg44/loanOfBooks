@@ -11,10 +11,13 @@ import java.util.Set;
 @Table(name = "books")
 public class Book {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private Double price;
     private LocalDate publicationYear;
+    @Column(columnDefinition = "TEXT")
     private String description;
 
     @ManyToMany
@@ -24,6 +27,9 @@ public class Book {
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )
     private Set<Category> categories = new HashSet<>();
+
+    @OneToMany(mappedBy = "id.book")
+    private Set<BorrowedBook> items = new HashSet<>();
 
     public Book(){
     }
