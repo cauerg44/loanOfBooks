@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -84,6 +85,14 @@ public class Book {
 
     public Set<Category> getCategories() {
         return categories;
+    }
+
+    public Set<BorrowedBook> getItems() {
+        return items;
+    }
+
+    public List<Loan> getLoans(){
+        return items.stream().map(x -> x.getLoan()).toList();
     }
 
     @Override

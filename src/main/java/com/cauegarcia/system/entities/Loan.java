@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 import java.time.Instant;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -57,6 +58,14 @@ public class Loan {
 
     public void setStatus(LoanStatus status) {
         this.status = status;
+    }
+
+    public Set<BorrowedBook> getItems(){
+        return items;
+    }
+
+    public List<Book> getProducts() {
+        return items.stream().map(x -> x.getBook()).toList();
     }
 
     @Override
