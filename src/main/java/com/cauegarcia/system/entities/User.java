@@ -83,6 +83,10 @@ public class User {
         this.password = password;
     }
 
+    public List<Loan> getLoans() {
+        return loans;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
