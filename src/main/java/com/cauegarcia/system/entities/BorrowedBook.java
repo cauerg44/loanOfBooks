@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "book_item")
+@Table(name = "loan_book_item")
 public class BorrowedBook {
 
     @EmbeddedId

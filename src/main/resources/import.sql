@@ -78,4 +78,25 @@ INSERT INTO book_category (book_id, category_id) VALUES (33, 6);
 INSERT INTO book_category (book_id, category_id) VALUES (34, 6);
 INSERT INTO book_category (book_id, category_id) VALUES (35, 6);
 
+INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Ricardison Ribeiro Rios', '+55 71 98827-2721', 'ricardison@gmail.com', DATE '1979-12-04', 'rickCliqx');
+INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Saulo Rios Garcia', '+55 71 98301-8738', 'saulorg@gmail.com', DATE '2010-03-30', 'sauloriosgarcia77');
+INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Herivelto Hermudes Fontes Garcia', '+55 71 98208-5667', 'herivelto.garcia10@gmail.com', DATE '1976-10-27', 'evaSecurePass');
+INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Cauê da Rocha Garcia', '+55 71 99647-7382', 'cauerg7@outlook.com', DATE '2004-11-08', 'sOfos312@');
+INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Ana Cláudia da Conceição Atáide', '+55 71 99600-4545', 'sophia@example.com', DATE '2005-05-03', 'kakaAtaide33');
 
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-01-24T21:34:60Z', 0, 5);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-03-11T15:30:34Z', 1, 3);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-02-04T18:20:12Z', 0, 5);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-12-08T15:30:18Z', 2, 2);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-07-07T19:32:32Z', 0, 2);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-12-28T20:30:00Z', 1, 3);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-08-10T16:55:32Z', 0, 4);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-05-11T12:30:00Z', 2, 1);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-12-22T13:00:00Z', 0, 4);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-11-15T13:30:55Z', 1, 1);
+
+INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (1, 1, 3, '16.99')
+INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (2, 3, 2, '21.50')
+INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (5, 4, 2, '10.99')
+INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (10, 1, 2, '30.00')
+INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (7, 2, 2, '40.00')
