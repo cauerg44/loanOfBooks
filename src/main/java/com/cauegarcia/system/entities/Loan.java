@@ -64,7 +64,7 @@ public class Loan {
         return items;
     }
 
-    public List<Book> getProducts() {
+    public List<Book> getBooks() {
         return items.stream().map(x -> x.getBook()).toList();
     }
 
