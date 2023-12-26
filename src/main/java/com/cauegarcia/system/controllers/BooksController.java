@@ -3,6 +3,7 @@ package com.cauegarcia.system.controllers;
 import com.cauegarcia.system.entities.Book;
 import com.cauegarcia.system.entities.dto.BookDTO;
 import com.cauegarcia.system.services.BookService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -32,7 +33,7 @@ public class BooksController {
     }
 
     @PostMapping
-    public ResponseEntity<BookDTO> insert(@RequestBody BookDTO bookDTO) {
+    public ResponseEntity<BookDTO> insert(@Valid @RequestBody BookDTO bookDTO) {
         bookDTO = service.insert(bookDTO);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(bookDTO.getId()).toUri();
@@ -40,7 +41,7 @@ public class BooksController {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<BookDTO> update(@PathVariable Long id, @RequestBody BookDTO bookDTO) {
+    public ResponseEntity<BookDTO> update(@PathVariable Long id, @Valid @RequestBody BookDTO bookDTO) {
         bookDTO = service.update(id, bookDTO);
         return ResponseEntity.ok(bookDTO);
     }
