@@ -48,6 +48,11 @@ public class BookService {
         return new BookDTO(newBook);
     }
 
+    @Transactional
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
+
     private void getDtoToEntity(BookDTO bookDTO, Book newBook) {
         newBook.setName(bookDTO.getName());
         newBook.setDescription(bookDTO.getDescription());
