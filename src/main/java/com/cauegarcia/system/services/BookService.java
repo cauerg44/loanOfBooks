@@ -31,4 +31,16 @@ public class BookService {
         Page<Book> response = repository.findAll(pageable);
         return response.map(x -> new BookDTO(x));
     }
+
+    @Transactional
+    public BookDTO insert(BookDTO bookDTO) {
+        Book newBook = new Book();
+        newBook.setName(bookDTO.getName());
+        newBook.setDescription(bookDTO.getDescription());
+        newBook.setPrice(bookDTO.getPrice());
+        newBook.setPublicationYear(bookDTO.getPublicationYear());
+
+        newBook = repository.save(newBook);
+        return new BookDTO(newBook);
+    }
 }
