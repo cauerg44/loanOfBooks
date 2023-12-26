@@ -3,11 +3,15 @@ package com.cauegarcia.system.services;
 import com.cauegarcia.system.entities.Book;
 import com.cauegarcia.system.entities.dto.BookDTO;
 import com.cauegarcia.system.repositories.BookRepository;
+import com.cauegarcia.system.services.exceptions.DatabaseException;
 import com.cauegarcia.system.services.exceptions.ResourceNotFoundException;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -41,15 +45,26 @@ public class BookService {
 
     @Transactional
     public BookDTO update(Long id, BookDTO bookDTO) {
-        Book newBook = repository.getReferenceById(id);
-        getDtoToEntity(bookDTO, newBook);
-        newBook = repository.save(newBook);
-        return new BookDTO(newBook);
+        try{
+            Book newBook = repository.getReferenceById(id);
+            getDtoToEntity(bookDTO, newBook);
+            newBook = repository.save(newBook);
+            return new BookDTO(newBook);
+        } catch (EntityNotFoundException e) {
+            throw new ResourceNotFoundException("Resource not found");
+        }
     }
 
-    @Transactional
+    @Transactional(propagation = Propagation.SUPPORTS)
     public void delete(Long id) {
-        repository.deleteById(id);
+        if(!repository.existsById(id)){
+            throw new ResourceNotFoundException("Resource not found");
+        }
+        try {
+            repository.deleteById(id);
+        } catch (DataIntegrityViolationException e){
+            throw new DatabaseException("Referential integrity error.");
+        }
     }
 
     private void getDtoToEntity(BookDTO bookDTO, Book newBook) {
