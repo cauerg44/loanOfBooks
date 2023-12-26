@@ -35,12 +35,23 @@ public class BookService {
     @Transactional
     public BookDTO insert(BookDTO bookDTO) {
         Book newBook = new Book();
+        getDtoToEntity(bookDTO, newBook);
+        newBook = repository.save(newBook);
+        return new BookDTO(newBook);
+    }
+
+    @Transactional
+    public BookDTO update(Long id, BookDTO bookDTO) {
+        Book newBook = repository.getReferenceById(id);
+        getDtoToEntity(bookDTO, newBook);
+        newBook = repository.save(newBook);
+        return new BookDTO(newBook);
+    }
+
+    private void getDtoToEntity(BookDTO bookDTO, Book newBook) {
         newBook.setName(bookDTO.getName());
         newBook.setDescription(bookDTO.getDescription());
         newBook.setPrice(bookDTO.getPrice());
         newBook.setPublicationYear(bookDTO.getPublicationYear());
-
-        newBook = repository.save(newBook);
-        return new BookDTO(newBook);
     }
 }

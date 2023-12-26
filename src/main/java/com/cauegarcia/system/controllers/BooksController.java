@@ -38,4 +38,10 @@ public class BooksController {
                 .buildAndExpand(bookDTO.getId()).toUri();
         return ResponseEntity.created(uri).body(bookDTO);
     }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<BookDTO> update(@PathVariable Long id, @RequestBody BookDTO bookDTO) {
+        bookDTO = service.update(id, bookDTO);
+        return ResponseEntity.ok(bookDTO);
+    }
 }
