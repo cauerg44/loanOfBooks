@@ -13,9 +13,6 @@ public class BookDTO {
     private LocalDate publicationYear;
     private String description;
 
-    public BookDTO(){
-    }
-
     public BookDTO(Long id, String name, Double price, LocalDate publicationYear, String description) {
         this.id = id;
         this.name = name;

@@ -3,6 +3,7 @@ package com.cauegarcia.system.services;
 import com.cauegarcia.system.entities.Book;
 import com.cauegarcia.system.entities.dto.BookDTO;
 import com.cauegarcia.system.repositories.BookRepository;
+import com.cauegarcia.system.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -20,10 +21,8 @@ public class BookService {
 
     @Transactional(readOnly = true)
     public BookDTO findById(Long id) {
-        Optional<Book> response = repository.findById(id);
-        Book book = response.get();
-        BookDTO dto = new BookDTO(book);
-        return dto;
+        Book book = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Resource not found"));
+        return new BookDTO(book);
     }
 
     @Transactional(readOnly = true)
