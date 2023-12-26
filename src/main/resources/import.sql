@@ -84,8 +84,8 @@ INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Herivelt
 INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Cauê da Rocha Garcia', '+55 71 99647-7382', 'cauerg7@outlook.com', DATE '2004-11-08', 'sOfos312@');
 INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Ana Cláudia da Conceição Atáide', '+55 71 99600-4545', 'sophia@example.com', DATE '2005-05-03', 'kakaAtaide33');
 
-INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-01-24T21:34:60Z', 0, 5);
-INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-03-11T15:30:34Z', 1, 3);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-01-22T21:34:59Z', 0, 5);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-03-11T15:30:34Z', 2, 3);
 INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-02-04T18:20:12Z', 0, 5);
 INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-12-08T15:30:18Z', 2, 2);
 INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-07-07T19:32:32Z', 0, 2);
