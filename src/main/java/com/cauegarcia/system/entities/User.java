@@ -3,9 +3,7 @@ package com.cauegarcia.system.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 @Table(name = "clients")
@@ -20,6 +18,12 @@ public class User {
     private String email;
     private LocalDate birthDate;
     private String password;
+
+    @ManyToMany
+    @JoinTable(name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles = new HashSet<>();
 
     @OneToMany(mappedBy = "client")
     private List<Loan> loans = new ArrayList<>();
@@ -86,6 +90,10 @@ public class User {
 
     public List<Loan> getLoans() {
         return loans;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
     }
 
     @Override

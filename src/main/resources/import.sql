@@ -78,11 +78,22 @@ INSERT INTO book_category (book_id, category_id) VALUES (33, 6);
 INSERT INTO book_category (book_id, category_id) VALUES (34, 6);
 INSERT INTO book_category (book_id, category_id) VALUES (35, 6);
 
-INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Ricardison Ribeiro Rios', '+55 71 98827-2721', 'ricardison@gmail.com', DATE '1979-12-04', 'rickCliqx');
-INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Saulo Rios Garcia', '+55 71 98301-8738', 'saulorg@gmail.com', DATE '2010-03-30', 'sauloriosgarcia77');
-INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Herivelto Hermudes Fontes Garcia', '+55 71 98208-5667', 'herivelto.garcia10@gmail.com', DATE '1976-10-27', 'evaSecurePass');
-INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Cauê da Rocha Garcia', '+55 71 99647-7382', 'cauerg7@outlook.com', DATE '2004-11-08', 'sOfos312@');
-INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Ana Cláudia da Conceição Atáide', '+55 71 99600-4545', 'sophia@example.com', DATE '2005-05-03', 'kakaAtaide33');
+INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Ricardison Ribeiro Rios', '+55 71 98827-2721', 'ricardison@gmail.com', DATE '1979-12-04', '$2a$10$rPpM/dvxpPYTcm6Nh9oxJeHba7k3TvXwfRFswu/zcxiCW4kTRxS.6');
+INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Saulo Rios Garcia', '+55 71 98301-8738', 'saulorg@gmail.com', DATE '2010-03-30', '$2a$10$x8KGUy8DsoMHhdKPTyNyruSyivQZTlP39T3UxUPwvXE5xM68gybki');
+INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Herivelto Hermudes Fontes Garcia', '+55 71 98208-5667', 'herivelto.garcia10@gmail.com', DATE '1976-10-27', '$2a$10$7ArP6X1aczdhVu/FV6xP0OBnpzRyM4NVBooDZr2WqE7jXLr6wvmGO');
+INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Cauê da Rocha Garcia', '+55 71 99647-7382', 'cauerg7@outlook.com', DATE '2004-11-08', ' $2a$10$d7vvF3Uo19TOg0JltjD2l.CqSXQFVBy0ADNYNqBaqDZoDylwyT1gi');
+INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Ana Cláudia da Conceição Atáide', '+55 71 99600-4545', 'sophia@example.com', DATE '2005-05-03', '$2a$10$yxOmhzhzKENjRlKCn7B5WOrnrIcnIbse3opyO1f4tPUSUAp9mBsMa');
+
+INSERT INTO roles (authority) VALUES ('ROLE_CLIENT')
+INSERT INTO roles (authority) VALUES ('ROLE_ADMIN')
+
+INSERT INTO user_role (role_id, user_id) VALUES (1, 1)
+INSERT INTO user_role (role_id, user_id) VALUES (2, 1)
+INSERT INTO user_role (role_id, user_id) VALUES (1, 2)
+INSERT INTO user_role (role_id, user_id) VALUES (1, 3)
+INSERT INTO user_role (role_id, user_id) VALUES (1, 4)
+INSERT INTO user_role (role_id, user_id) VALUES (2, 4)
+INSERT INTO user_role (role_id, user_id) VALUES (1, 5)
 
 INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-01-22T21:34:59Z', 0, 5);
 INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-03-11T15:30:34Z', 2, 3);
