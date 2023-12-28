@@ -78,11 +78,11 @@ INSERT INTO book_category (book_id, category_id) VALUES (33, 6);
 INSERT INTO book_category (book_id, category_id) VALUES (34, 6);
 INSERT INTO book_category (book_id, category_id) VALUES (35, 6);
 
-INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Ricardison Ribeiro Rios', '+55 71 98827-2721', 'ricardison@gmail.com', DATE '1979-12-04', '$2a$10$3zQRTU24UtCa1LUDNrI95udggEc.GlAXDVX7pulEO/jillNRRL37C');
-INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Saulo Rios Garcia', '+55 71 98301-8738', 'saulorg@gmail.com', DATE '2010-03-30', '$2a$10$UiOrXzkhEmoVujpvlW0.JOu7xRJTtwpr1AdsS4asTfJPVxtbU1lGe');
-INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Herivelto Hermudes Fontes Garcia', '+55 71 98208-5667', 'herivelto.garcia10@gmail.com', DATE '1976-10-27', '$2a$10$VmWIYZ7j1aVJzyr4oK42juEBNBa9hNjihlZVDofKUlsdv8YPhnBbu');
-INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Cauê da Rocha Garcia', '+55 71 99647-7382', 'cauerg7@outlook.com', DATE '2004-11-08', '$2a$10$21uhrvbf/7orw4czXPvGf.thtGJQw9F0hG3YxjIsX5kFXI5hL55Tq');
-INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Ana Cláudia da Conceição Atáide', '+55 71 99600-4545', 'anaclaudia@hotmail.com', DATE '2005-05-03', '$2a$10$WXuEiZKTt.s01KpiXsdx/uM1ISZFBg5/ulsm7epAf7zNdkdU0wOIC');
+INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Ricardison Ribeiro Rios', '+55 71 98827-2721', 'ricardison@gmail.com', DATE '1979-12-04', '$2a$10$HqNv.jWH.GthtN9oCJfhmuLRPnfObMP37LXXUFt7vyr0VvDyyYrdy');
+INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Saulo Rios Garcia', '+55 71 98301-8738', 'saulorg@gmail.com', DATE '2010-03-30', '$2a$10$5W/VyKof2qnKnMr.p9EdcuZ/n9ZkuzhwjrCPoqe763D6jFDtQnbQW');
+INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Herivelto Hermudes Fontes Garcia', '+55 71 98208-5667', 'herivelto.garcia10@gmail.com', DATE '1976-10-27', '$2a$10$u15Tp0wTBHl7nefr.MUfp.wB7HbFP1X61FqbSe1ZOMyuHWdqb6dla');
+INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Cauê da Rocha Garcia', '+55 71 99647-7382', 'cauerg7@outlook.com', DATE '2004-11-08', '$2a$10$/Rhu4x1p4kwEM20.SPu1DOerF0tBk6eFgF9d/tJ5Tp2Tj6aJ/E48m');
+INSERT INTO clients (name, phone, email, birth_date, password) VALUES ('Ana Cláudia da Conceição Atáide', '+55 71 99600-4545', 'anaclaudia@hotmail.com', DATE '2005-05-03', '$2a$10$iRCwb4QjePs5a/8/3tJXIuEi1nwBbqKgFaubbVZWeK/7/VlOXRczi');
 
 INSERT INTO roles (authority) VALUES ('ROLE_CLIENT')
 INSERT INTO roles (authority) VALUES ('ROLE_ADMIN')
