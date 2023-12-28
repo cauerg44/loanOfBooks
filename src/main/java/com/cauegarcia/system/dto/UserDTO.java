@@ -1,4 +1,4 @@
-package com.cauegarcia.system.entities.dto;
+package com.cauegarcia.system.dto;
 
 import com.cauegarcia.system.entities.User;
 import org.springframework.security.core.GrantedAuthority;

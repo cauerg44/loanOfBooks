@@ -1,7 +1,7 @@
 package com.cauegarcia.system.controllers.handlers;
 
-import com.cauegarcia.system.entities.dto.CustomizedError;
-import com.cauegarcia.system.entities.dto.ValidationError;
+import com.cauegarcia.system.dto.CustomizedError;
+import com.cauegarcia.system.dto.ValidationError;
 import com.cauegarcia.system.services.exceptions.DatabaseException;
 import com.cauegarcia.system.services.exceptions.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,7 +1,7 @@
 package com.cauegarcia.system.controllers;
 
 import com.cauegarcia.system.entities.Book;
-import com.cauegarcia.system.entities.dto.BookDTO;
+import com.cauegarcia.system.dto.BookDTO;
 import com.cauegarcia.system.services.BookService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

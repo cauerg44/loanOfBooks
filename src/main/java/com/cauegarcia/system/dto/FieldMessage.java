@@ -1,4 +1,4 @@
-package com.cauegarcia.system.entities.dto;
+package com.cauegarcia.system.dto;
 
 public class FieldMessage {
 

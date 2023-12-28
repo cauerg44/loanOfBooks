@@ -2,7 +2,7 @@ package com.cauegarcia.system.services;
 
 import com.cauegarcia.system.entities.Role;
 import com.cauegarcia.system.entities.User;
-import com.cauegarcia.system.entities.dto.UserDTO;
+import com.cauegarcia.system.dto.UserDTO;
 import com.cauegarcia.system.projections.UserDetailsProjection;
 import com.cauegarcia.system.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

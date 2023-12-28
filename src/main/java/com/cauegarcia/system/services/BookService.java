@@ -1,7 +1,9 @@
 package com.cauegarcia.system.services;
 
+import com.cauegarcia.system.dto.CategoryDTO;
 import com.cauegarcia.system.entities.Book;
-import com.cauegarcia.system.entities.dto.BookDTO;
+import com.cauegarcia.system.dto.BookDTO;
+import com.cauegarcia.system.entities.Category;
 import com.cauegarcia.system.repositories.BookRepository;
 import com.cauegarcia.system.services.exceptions.DatabaseException;
 import com.cauegarcia.system.services.exceptions.ResourceNotFoundException;
@@ -13,9 +15,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class BookService {
@@ -72,5 +71,12 @@ public class BookService {
         newBook.setDescription(bookDTO.getDescription());
         newBook.setPrice(bookDTO.getPrice());
         newBook.setPublicationYear(bookDTO.getPublicationYear());
+
+        newBook.getCategories().clear();
+        for (CategoryDTO categoryDTO : bookDTO.getCategories()) {
+            Category cat = new Category();
+            cat.setId(categoryDTO.getId());
+            newBook.getCategories().add(cat);
+        }
     }
 }

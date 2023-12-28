@@ -1,6 +1,6 @@
 package com.cauegarcia.system.controllers;
 
-import com.cauegarcia.system.entities.dto.UserDTO;
+import com.cauegarcia.system.dto.UserDTO;
 import com.cauegarcia.system.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

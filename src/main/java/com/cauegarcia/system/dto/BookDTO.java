@@ -1,13 +1,15 @@
-package com.cauegarcia.system.entities.dto;
+package com.cauegarcia.system.dto;
 
 import com.cauegarcia.system.entities.Book;
-import jakarta.persistence.Column;
+import com.cauegarcia.system.entities.Category;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BookDTO {
 
@@ -20,6 +22,9 @@ public class BookDTO {
     private LocalDate publicationYear;
     @Size(min = 12, message = "Descriptions must have at least 10 characters")
     private String description;
+
+    @NotEmpty
+    private List<CategoryDTO> categories = new ArrayList<>();
 
     public BookDTO(Long id, String name, Double price, LocalDate publicationYear, String description) {
         this.id = id;
@@ -35,6 +40,9 @@ public class BookDTO {
         price = ent.getPrice();
         publicationYear = ent.getPublicationYear();
         description = ent.getDescription();
+        for (Category cat : ent.getCategories()) {
+            categories.add(new CategoryDTO(cat));
+        }
     }
 
     public Long getId() {
@@ -55,5 +63,9 @@ public class BookDTO {
 
     public String getDescription() {
         return description;
+    }
+
+    public List<CategoryDTO> getCategories() {
+        return categories;
     }
 }
