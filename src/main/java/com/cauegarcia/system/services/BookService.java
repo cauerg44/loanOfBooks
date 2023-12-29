@@ -1,10 +1,13 @@
 package com.cauegarcia.system.services;
 
 import com.cauegarcia.system.dto.CategoryDTO;
-import com.cauegarcia.system.entities.Book;
+import com.cauegarcia.system.dto.LoanDTO;
+import com.cauegarcia.system.dto.LoanItemDTO;
+import com.cauegarcia.system.entities.*;
 import com.cauegarcia.system.dto.BookDTO;
-import com.cauegarcia.system.entities.Category;
+import com.cauegarcia.system.entities.enums.LoanStatus;
 import com.cauegarcia.system.repositories.BookRepository;
+import com.cauegarcia.system.repositories.LoanItemRepository;
 import com.cauegarcia.system.services.exceptions.DatabaseException;
 import com.cauegarcia.system.services.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
@@ -15,6 +18,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.time.Instant;
 
 @Service
 public class BookService {

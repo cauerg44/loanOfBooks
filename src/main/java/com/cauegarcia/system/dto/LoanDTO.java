@@ -3,6 +3,7 @@ package com.cauegarcia.system.dto;
 import com.cauegarcia.system.entities.BorrowedBook;
 import com.cauegarcia.system.entities.Loan;
 import com.cauegarcia.system.entities.enums.LoanStatus;
+import jakarta.validation.constraints.NotEmpty;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public class LoanDTO {
 
     private ClientDTO client;
 
+    @NotEmpty(message = "It must have one book")
     private List<LoanItemDTO> books = new ArrayList<>();
 
     public LoanDTO(Long id, Instant moment, LoanStatus status, ClientDTO client) {

@@ -64,6 +64,10 @@ public class Loan {
         return client;
     }
 
+    public void setClient(User client) {
+        this.client = client;
+    }
+
     public Set<BorrowedBook> getItems(){
         return items;
     }

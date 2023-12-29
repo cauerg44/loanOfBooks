@@ -1,5 +1,6 @@
 package com.cauegarcia.system.controllers;
 
+import com.cauegarcia.system.dto.LoanDTO;
 import com.cauegarcia.system.entities.Book;
 import com.cauegarcia.system.dto.BookDTO;
 import com.cauegarcia.system.services.BookService;
@@ -31,15 +32,6 @@ public class BooksController {
     public ResponseEntity<Page<BookDTO>> findAllBooks(Pageable pageable) {
         Page<BookDTO> bookDTO = service.findAllBooks(pageable);
         return ResponseEntity.ok(bookDTO);
-    }
-
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
-    @PostMapping
-    public ResponseEntity<BookDTO> insert(@Valid @RequestBody BookDTO bookDTO) {
-        bookDTO = service.insert(bookDTO);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-                .buildAndExpand(bookDTO.getId()).toUri();
-        return ResponseEntity.created(uri).body(bookDTO);
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
