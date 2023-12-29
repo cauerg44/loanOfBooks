@@ -60,6 +60,10 @@ public class Loan {
         this.status = status;
     }
 
+    public User getClient() {
+        return client;
+    }
+
     public Set<BorrowedBook> getItems(){
         return items;
     }
