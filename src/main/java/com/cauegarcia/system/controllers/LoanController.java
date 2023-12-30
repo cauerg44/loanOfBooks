@@ -18,7 +18,7 @@ public class LoanController {
     @Autowired
     private LoanService service;
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_CLIENT')")
     @GetMapping(value = "/{id}")
     public ResponseEntity<LoanDTO> findById(@PathVariable Long id) {
         LoanDTO bookDTO = service.findById(id);

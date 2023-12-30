@@ -3,6 +3,7 @@ package com.cauegarcia.system.controllers.handlers;
 import com.cauegarcia.system.dto.CustomizedError;
 import com.cauegarcia.system.dto.ValidationError;
 import com.cauegarcia.system.services.exceptions.DatabaseException;
+import com.cauegarcia.system.services.exceptions.ForbiddenException;
 import com.cauegarcia.system.services.exceptions.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
@@ -38,6 +39,13 @@ public class ControllerExceptionHandler {
         for(FieldError f : e.getBindingResult().getFieldErrors()) {
             err.addError(f.getField(), f.getDefaultMessage());
         }
+        return ResponseEntity.status(status).body(err);
+    }
+
+    @ExceptionHandler(ForbiddenException.class)
+    public ResponseEntity<CustomizedError> forbidden(ForbiddenException e, HttpServletRequest request){
+        HttpStatus status = HttpStatus.FORBIDDEN;
+        CustomizedError err = new CustomizedError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI());
         return ResponseEntity.status(status).body(err);
     }
 }

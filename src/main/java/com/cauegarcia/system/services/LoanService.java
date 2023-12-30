@@ -33,10 +33,14 @@ public class LoanService {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private AuthServiceRequest authServiceRequest;
+
     @Transactional(readOnly = true)
     public LoanDTO findById(Long id) {
         Loan loan = repository.findById(id).orElseThrow(
                 () -> new ResourceNotFoundException("Resource not found"));
+        authServiceRequest.validateSelforAdminRequest(loan.getClient().getId());
         return new LoanDTO(loan);
     }
 

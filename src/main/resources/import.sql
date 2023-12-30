@@ -95,19 +95,24 @@ INSERT INTO user_role (role_id, user_id) VALUES (1, 4)
 INSERT INTO user_role (role_id, user_id) VALUES (2, 4)
 INSERT INTO user_role (role_id, user_id) VALUES (1, 5)
 
-INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-01-22T21:34:59Z', 0, 5);
-INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-03-11T15:30:34Z', 2, 3);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-01-22T21:34:59Z', 1, 5);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-03-11T15:30:34Z', 3, 3);
 INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-02-04T18:20:12Z', 0, 5);
-INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-12-08T15:30:18Z', 2, 2);
-INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-07-07T19:32:32Z', 0, 2);
-INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-12-28T20:30:00Z', 1, 3);
-INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-08-10T16:55:32Z', 0, 4);
-INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-05-11T12:30:00Z', 2, 1);
-INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-12-22T13:00:00Z', 0, 4);
-INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-11-15T13:30:55Z', 1, 1);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-12-08T15:30:18Z', 3, 2);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-07-07T19:32:32Z', 1, 2);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-12-28T20:30:00Z', 2, 3);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-08-10T16:55:32Z', 1, 4);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-05-11T12:30:00Z', 3, 1);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-12-22T13:00:00Z', 1, 4);
+INSERT INTO loans (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2023-11-15T13:30:55Z', 2, 1);
 
 INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (1, 1, 3, '16.99')
-INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (2, 3, 2, '21.50')
-INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (5, 4, 2, '10.99')
-INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (10, 1, 2, '30.00')
-INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (7, 2, 2, '40.00')
+INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (2, 2, 8, '21.50')
+INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (3, 4, 3, '13.00')
+INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (4, 4, 1, '24.99')
+INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (5, 5, 2, '10.99')
+INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (6, 6, 4, '45.00')
+INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (7, 7, 6, '40.00')
+INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (8, 8, 2, '50.00')
+INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (9, 9, 4, '35.00')
+INSERT INTO loan_book_item (book_id, loan_id, quantity, price) VALUES (10, 10, 5, '30.00')
