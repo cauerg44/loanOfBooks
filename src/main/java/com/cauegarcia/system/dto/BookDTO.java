@@ -2,10 +2,7 @@ package com.cauegarcia.system.dto;
 
 import com.cauegarcia.system.entities.Book;
 import com.cauegarcia.system.entities.Category;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,8 +12,9 @@ public class BookDTO {
 
     private Long id;
     @Size(min = 5, max = 75, message = "Name book must have 5 to 75 characters")
-    @NotBlank(message = "Field required, it must have a name book")
+    @NotBlank(message = "Required field, it must have a name book")
     private String name;
+    @NotNull(message = "Required field")
     @Positive(message = "Price cannot be equal or less than zero")
     private Double price;
     private LocalDate publicationYear;

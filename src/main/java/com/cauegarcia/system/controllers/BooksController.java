@@ -35,6 +35,15 @@ public class BooksController {
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
+    @PostMapping
+    public ResponseEntity<BookDTO> insert(@Valid @RequestBody BookDTO dto) {
+        dto = service.insert(dto);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+                .buildAndExpand(dto.getId()).toUri();
+        return ResponseEntity.created(uri).body(dto);
+    }
+
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @PutMapping(value = "/{id}")
     public ResponseEntity<BookDTO> update(@PathVariable Long id, @Valid @RequestBody BookDTO bookDTO) {
         bookDTO = service.update(id, bookDTO);
