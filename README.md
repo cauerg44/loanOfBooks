@@ -9,7 +9,7 @@ Aplicação spring boot com security envolvendo um sistema de empréstimo e vend
 ## Back end
 - Java
 - Spring Boot
-- Spring Boot
+- Spring Security
 - JPA / Hibernate
 - Maven
 # Autor
