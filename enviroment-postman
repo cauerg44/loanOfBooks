@@ -1,0 +1,45 @@
+{
+	"id": "c8d9511c-7678-4439-9659-11c74a124932",
+	"name": "LOAN BOOKS AUTH",
+	"values": [
+		{
+			"key": "HOST",
+			"value": "http://localhost:8080",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "USER_ID",
+			"value": "userid",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "CLIENT_SECRET\n",
+			"value": "usersecret",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "USERNAME",
+			"value": "saulorg@gmail.com",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "PASSWORD",
+			"value": "sauloRIOS",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2024-01-12T20:49:30.118Z",
+	"_postman_exported_using": "Postman/10.21.14"
+}
