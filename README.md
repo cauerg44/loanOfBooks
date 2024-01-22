@@ -12,6 +12,9 @@ Aplicação spring boot com security envolvendo um sistema de empréstimo e vend
 - Spring Security
 - JPA / Hibernate
 - Maven
+- H2 database
+- MySQL
+- PostgreSQL
 # Autor
 
 Cauê da Rocha Garcia
